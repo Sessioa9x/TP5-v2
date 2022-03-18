@@ -1,10 +1,11 @@
 package Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Transaction {
-	int id;
-	String name;
+	int  id;
+	String name = "";
 	User user;
 	float montant;
 	Date date;
@@ -49,6 +50,15 @@ public class Transaction {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
+	public Transaction addMoney(User user,Account account,Float amount,String Descript)
+	{
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+		Date date = new Date(System.currentTimeMillis());
+		System.out.println(formatter.format(date));
+		return  new Transaction(1,Descript,user,amount,date);
+	}
+	
 	
 	
 }
