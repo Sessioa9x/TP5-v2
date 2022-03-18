@@ -59,6 +59,47 @@ public class Transaction {
 		return  new Transaction(1,Descript,user,amount,date);
 	}
 	
+	public boolean Retrait(User user,Account account,Float amount,String Descript)
+	{
+		
+		if(VerifyFloor(account, amount) == true)
+		{
+			SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+			Date date = new Date(System.currentTimeMillis());
+			System.out.println(formatter.format(date));
+			float CurrentSold = account.getSold();
+			float NewSold = account.getSold() - amount;
+			//new Transaction(1,Descript,user,NewSold,date);
+			
+			new Transaction(1,Descript,user,amount,date);
+			  
+			return true;
+		}
+		else {
+			return false; 
+		}
+			
+	}
+	
+	public boolean VerifyFloor(Account account,Float amount) {
+		
+	
+		if(account.getSold() >  amount)
+	
+		{
+			return true;
+		}
+		if(account.getSold() <=  amount)
+		{
+			return false;
+		}
+	
+	
+		return false;
+	}
+	
+	
+	
 	
 	
 }
