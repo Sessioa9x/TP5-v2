@@ -5,19 +5,30 @@ public class Account {
 	public User[] user;
 	public Type type;
 	public float sold;
+	public float floor;
 	/**
 	 * @param id
 	 * @param user
 	 * @param type
 	 * @param sold
 	 */
-	public Account(int id, User[] user, Type type, float sold) {
+	public Account(int id, User[] user, Type type, float floor) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.type = type;
-		this.sold = sold;
+		this.sold = 0;
+		this.floor = floor;
 	}
+	
+	public float getFloor() {
+		return floor;
+	}
+
+	public void setFloor(float floor) {
+		this.floor = floor;
+	}
+
 	/**
 	 * 
 	 */

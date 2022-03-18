@@ -116,6 +116,12 @@ public class User {
 	public void setSold(float sold) {
 		Sold = sold;
 	}
+	
+	public Account addAccount(Type type, float plafond, User[] users){
+		
+		return new Account(1 ,users, type, plafond);
+		
+	}
      
      
 }
