@@ -13,5 +13,7 @@ public class controller {
 		
 		login.setVisible(true);
 		signin.setVisible(true);
+		
+		// test
 	}
 }
